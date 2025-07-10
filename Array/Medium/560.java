@@ -29,24 +29,31 @@
 //         System.out.println("Number of subarrays: " + result);
 //     }
 // }
-class Solution {
-    public int subarraySum(int[] nums, int k) {
-        int length = nums.length;
-        int subSet = 0;
+import java.util.HashMap;
+import java.util.Map;
 
-        for (int i = 0; i < length; i++) {
-            int currentSum = 0;
-            for (int j = i; j < length; j++) {
-                currentSum += nums[j];
-                System.out.println("Subarray from " + i + " to " + j + ", sum = " + currentSum);
-                if (currentSum == k) {
-                    subSet++;
-                }
-            }
+class Solution {
+    public int subarraySum(int[] arr, int k) {
+        int n = arr.length;
+        Map<Integer, Integer> mpp = new HashMap<>();
+        int preSum = 0, count = 0;
+
+        mpp.put(0, 1); // Base case: a prefix sum of 0 exists once.
+
+        for (int i = 0; i < n; i++) {
+            preSum += arr[i]; // Calculate current prefix sum
+
+            int remove = preSum - k; // Find the required prefix sum to form a subarray with sum k
+            count += mpp.getOrDefault(remove, 0); // Add the count of such prefix sums if present
+
+            // Update the map with current prefix sum count
+            mpp.put(preSum, mpp.getOrDefault(preSum, 0) + 1);
         }
-        return subSet;
+
+        return count;
     }
 }
+
 
 class Main {
     public static void main(String[] args) {
