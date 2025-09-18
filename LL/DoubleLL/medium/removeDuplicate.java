@@ -38,7 +38,7 @@ class Solution {
                if (next != null) {
                     next.prev = prev;
                 }
-
+ 
             }
             temp = temp.next;
         }
