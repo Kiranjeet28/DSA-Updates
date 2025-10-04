@@ -1,3 +1,5 @@
+import AdvanceMath.Solution;
+
 class Solution {
     public boolean checkIthBit(int n, int i) {
 
