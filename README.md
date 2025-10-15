@@ -32,6 +32,10 @@ DSA/
 │   ├── easy/
 │   ├── medium/
 │   └── hard/
+├── Recursion/
+│   ├── PatternHard/
+│   ├── StringPattern/
+│   ├── subSet/
 └── README.md
 ```
 
@@ -89,6 +93,6 @@ java /out/26
 Solved ✅ 
 | Easy  | Medium | Hard  | 
 | ----- | ------ | ----- | 
-| 96/131 |70/187   | 24/136 | 
+| 96/131 |75/187   | 28/136 | 
 
 
