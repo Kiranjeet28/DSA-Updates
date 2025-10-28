@@ -35,7 +35,19 @@ DSA/
 ├── Recursion/
 │   ├── PatternHard/
 │   ├── StringPattern/
-│   ├── subSet/
+│   ├── subSet
+── StacknQueue
+│   ├── Important
+│   │ 
+│   ├── Queue
+│   └── Stack 
+│       ├── Converstion
+│       │ 
+│       ├── Implementation
+│       │   
+│       └── Important
+│           
+└── windowSlinding
 └── README.md
 ```
 
@@ -93,6 +105,6 @@ java /out/26
 Solved ✅ 
 | Easy  | Medium | Hard  | 
 | ----- | ------ | ----- | 
-| 98/131 |89/187   | 33/136 | 
+| 99/131 |96/187   | 33/136 | 
 
 
