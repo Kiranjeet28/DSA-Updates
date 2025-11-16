@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
         int res = 0;
