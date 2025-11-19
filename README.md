@@ -48,6 +48,13 @@ DSA/
 │       └── Important
 │           
 └── windowSlinding
+├── GreedyAlgorithm/
+│   ├── easy/
+│   └── hard/
+├── BT(Binary Tree)/
+│   ├── easy/
+│   ├── medium/
+│   └── hard/
 └── README.md
 ```
 
@@ -105,6 +112,6 @@ java /out/26
 Solved ✅ 
 | Easy  | Medium | Hard  | 
 | ----- | ------ | ----- | 
-| 104/131 |104/187   | 36/136 | 
+| 119/131 |128/187   | 40/136 | 
 
 
