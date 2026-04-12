@@ -17,15 +17,15 @@ class Solution {
                     // If characters match, we extend the common substring length
                     // from the diagonal element.
                     dp[j] = 1 + dp[j - 1];
+                    // Keep track of the maximum length found so far.
+                    if (dp[j] > max) {
+                        max = dp[j];
+                    }
                 } else {
                     // If they don't match, the common substring is broken, so reset to 0.
                     dp[j] = 0;
                 }
-
-                // Keep track of the maximum length found so far.
-                if (dp[j] > max) {
-                    max = dp[j];
-                }
+               
             }
         }
 
