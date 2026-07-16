@@ -1,0 +1,22 @@
+class Solution{
+	int l = 0;
+	int r = 0;
+	public int palidromeString(String s){
+		for(int i = 0 ;i < s.length(); i++){
+			int right = i ; 
+			int left = i ;
+			while(right < s.length()-1 && s.charAt(right) == s.charAt(right+1) ){
+				right++;
+			}
+			while(right < s.length() && left >= 0 &&  s.charAt(right) == s.charAt(left)){
+				right++;
+				left--;
+			} 
+			  if (right - left - 1 > r - l + 1) {
+                l = left + 1;
+                r = right - 1;
+            }
+		}
+		return (r - l) +1;
+	}
+}
