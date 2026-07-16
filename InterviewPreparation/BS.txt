@@ -1,0 +1,31 @@
+class Solution {
+
+    int sum;
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        sum = targetSum;
+
+        if(root == null) return false;
+
+        return rec(root, root.val);
+    }
+
+    public boolean rec(TreeNode root, int currSum) {
+
+        if(root == null) return false;
+
+        if(root.left == null && root.right == null && currSum == sum)
+            return true;
+
+        boolean l = false;
+        boolean r = false;
+
+        if(root.left != null)
+            l = rec(root.left, currSum + root.left.val);
+
+        if(root.right != null)
+            r = rec(root.right, currSum + root.right.val);
+
+        return l || r;
+    }
+}

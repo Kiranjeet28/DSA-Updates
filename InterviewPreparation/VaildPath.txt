@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Solution {
+    public String simplifyPath(String path) {
+        // 1. Split path by one or more slashes
+        String[] dir = path.split("/+");
+        Stack<String> stack = new Stack<>();
+        
+        // 2. Process directories from left to right
+        for (String d : dir) {
+            if (d.equals("..")) {
+                if (!stack.isEmpty()) {
+                    stack.pop(); // Go up one level
+                }
+            } else if (!d.isEmpty() && !d.equals(".")) {
+                stack.push(d); // Valid directory name
+            }
+        }
+        
+        // 3. Rebuild the path from the bottom of the stack up
+        StringBuilder sb = new StringBuilder();
+        for (String s : stack) {
+            sb.append("/").append(s);
+        }
+        
+        // 4. Handle edge case for the root directory
+        return sb.length() == 0 ? "/" : sb.toString();
+    }
+}

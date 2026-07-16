@@ -1,0 +1,63 @@
+class Solution {
+    public void gameOfLife(int[][] board) {
+
+        int rows = board.length;
+        int cols = board[0].length;
+
+        int[][] dummy = new int[rows][cols];
+
+        int[][] dir = {
+            {1,1}, {-1,1}, {-1,-1}, {1,-1},
+            {0,1}, {1,0}, {-1,0}, {0,-1}
+        };
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+
+                int sum = 0;
+
+                // count live neighbours
+                for (int[] d : dir) {
+
+                    int row = i + d[0];
+                    int col = j + d[1];
+
+                    if (row >= 0 && row < rows &&
+                        col >= 0 && col < cols) {
+
+                        if (board[row][col] == 1) {
+                            sum++;
+                        }
+                    }
+                }
+
+                // Rule 1 & 2
+                if (board[i][j] == 1) {
+
+                    if (sum == 2 || sum == 3) {
+                        dummy[i][j] = 1;
+                    } else {
+                        dummy[i][j] = 0;
+                    }
+
+                }
+                // Rule 3
+                else {
+
+                    if (sum == 3) {
+                        dummy[i][j] = 1;
+                    } else {
+                        dummy[i][j] = 0;
+                    }
+                }
+            }
+        }
+
+        // copy back
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                board[i][j] = dummy[i][j];
+            }
+        }
+    }
+}
